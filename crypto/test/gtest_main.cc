@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
     }
 #endif
 
-#if defined(TEST_ARM_CPUS)
+#if defined(TEST_ARM_CPUS) && !defined(OPENSSL_STATIC_ARMCAP)
     if (strncmp(argv[i], "--cpu=", 6) == 0) {
       const char *cpu = argv[i] + 6;
       uint32_t armcap;
